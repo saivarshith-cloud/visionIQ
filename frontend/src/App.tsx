@@ -23,6 +23,7 @@ import { HistoryView } from './components/HistoryView';
 import { ExplainModal } from './components/ExplainModal';
 import { PrintableReport } from './components/PrintableReport';
 import { ApiKeyConfigModal } from './components/ApiKeyConfigModal';
+import { API_BASE_URL } from './config';
 import {
   Sparkles,
   Shield,
@@ -76,7 +77,7 @@ export default function App() {
       setErrorMessage(null);
     } catch (err: any) {
       console.error('Initialization error:', err);
-      setErrorMessage(err.message || 'Cannot connect to backend server at http://localhost:8000. Please ensure the backend is running.');
+      setErrorMessage(err.message || `Cannot connect to VisionIQ backend at ${API_BASE_URL}. Please ensure the backend server is running.`);
     }
   };
 

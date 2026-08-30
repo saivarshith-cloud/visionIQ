@@ -44,10 +44,10 @@ app = FastAPI(
     version="2.0.0"
 )
 
-# Robust CORS configuration for all dev origins
+# Robust CORS configuration for dev and production origins (including Vercel previews)
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex=r"http://(localhost|127\.0\.0\.1|0\.0\.0\.0|192\.168\.\d+\.\d+)(:\d+)?",
+    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1|0\.0\.0\.0|192\.168\.\d+\.\d+|.*\.vercel\.app|.*\.onrender\.com)(:\d+)?",
     allow_origins=CORS_ORIGINS + ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],

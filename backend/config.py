@@ -14,7 +14,7 @@ reload_env()
 
 # Server Config
 HOST = os.getenv("BACKEND_HOST", "0.0.0.0")
-PORT = int(os.getenv("BACKEND_PORT", os.getenv("PORT", "8000")))
+PORT = int(os.getenv("PORT") or os.getenv("BACKEND_PORT") or "8000")
 
 # CORS Origins
 raw_cors = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000")
