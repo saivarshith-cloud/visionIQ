@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Secrets
+.env
+.env.*
+*.env
+!.env.example
+
+# Local storage and database
+storage/uploads/*
+!storage/uploads/.gitkeep
+storage/frames/*
+!storage/frames/.gitkeep
+storage/*.db
+storage/*.sqlite
+storage/*.sqlite3
